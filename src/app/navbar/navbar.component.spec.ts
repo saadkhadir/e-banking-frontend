@@ -10,7 +10,7 @@ describe('NavbarComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [ NavbarComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
