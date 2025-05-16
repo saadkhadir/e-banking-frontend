@@ -53,35 +53,35 @@ export class AccountsComponent implements OnInit {
     let accountDestination :string =this.operationFromGroup.value.accountDestination;
     if(operationType=='DEBIT'){
       this.accountService.debit(accountId, amount,description).subscribe({
-        next : (data)=>{
+        next : (data: any)=>{
           alert("Success Credit");
           this.operationFromGroup.reset();
           this.handleSearchAccount();
         },
-        error : (err)=>{
+        error : (err: any)=>{
           console.log(err);
         }
       });
     } else if(operationType=='CREDIT'){
       this.accountService.credit(accountId, amount,description).subscribe({
-        next : (data)=>{
+        next : (data: any)=>{
           alert("Success Debit");
           this.operationFromGroup.reset();
           this.handleSearchAccount();
         },
-        error : (err)=>{
+        error : (err: any)=>{
           console.log(err);
         }
       });
     }
     else if(operationType=='TRANSFER'){
       this.accountService.transfer(accountId,accountDestination, amount,description).subscribe({
-        next : (data)=>{
+        next : (data: any)=>{
           alert("Success Transfer");
           this.operationFromGroup.reset();
           this.handleSearchAccount();
         },
-        error : (err)=>{
+        error : (err: any)=>{
           console.log(err);
         }
       });
