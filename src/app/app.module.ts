@@ -7,13 +7,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { CustomersComponent } from './customers/customers.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ModelComponent } from './model/model.component';
+import { NewCustomerComponent } from './new-customer/new-customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     AccountsComponent,
-    CustomersComponent
+    CustomersComponent,
+    ModelComponent,
+    NewCustomerComponent
   ],
   imports: [
     BrowserModule,
