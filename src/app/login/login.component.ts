@@ -10,7 +10,7 @@ import {AuthService} from "../services/auth.service";
 })
 export class LoginComponent implements OnInit {
   formlogin! : FormGroup;
-  constructor(private fb : FormBuilder, private router : Router , private authService : AuthService) {}
+  constructor(private fb : FormBuilder , private authService : AuthService , private router : Router) {}
   ngOnInit() :void{
     this.formlogin = this.fb.group({
       username : this.fb.control(""),
@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(username, pwd).subscribe({
       next: data=> {
         this.authService.loadProfile(data);
+        this.router.navigateByUrl("/admin");
       },
       error: err => {
         console.log(err);
